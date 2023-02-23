@@ -32,3 +32,11 @@ console.log(
 
 // Example: Import a stylesheet in app/frontend/index.css
 // import '~/index.css'
+
+import React, {createElement} from "react";
+import { createRoot } from "react-dom/client";
+import App from "@/components/home";
+
+const domContainer = document.querySelector("#home");
+const home = createRoot(domContainer);
+home.render(createElement(App));
