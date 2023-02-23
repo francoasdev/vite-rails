@@ -54,3 +54,5 @@ end
 
 # Use Redis for Action Cable
 gem "redis", "~> 4.0"
+
+gem "sitepress-rails", "~> 3.2"
