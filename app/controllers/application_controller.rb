@@ -5,11 +5,11 @@ class ApplicationController < ActionController::Base
     cookies[:dark] = {
       value: 'dark mode on'
     }
-    redirect_to root_path
+    redirect_back(fallback_location: root_path)
   end
 
   def light
     cookies.delete(:dark)
-    redirect_to root_path
+    redirect_back(fallback_location: root_path)
   end
 end
