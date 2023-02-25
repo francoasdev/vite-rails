@@ -1,7 +1,11 @@
 <%# The "base" layout contains boilerplate common to *all* views. %>
 
 <!DOCTYPE html>
-<html>
+<% if cookies[:dark] %>
+<html lang="en" class="dark" style="color-scheme: dark;">
+<% else %>
+<html lang="en">
+<% end %>
   <head>
     <!-- Vite Rails <%= Rails.application.config.version %> (<%= l(Rails.application.config.version_time) %>) -->
     <%= capybara_lockstep if defined?(Capybara::Lockstep) %>
@@ -27,10 +31,13 @@
 
       Visit the guide for more information: https://vite-ruby.netlify.app/guide/rails
     -->
+    <%= render partial: "layouts/head" %>
     <%= yield(:head) %>
   </head>
 
-  <body>
+  <body class="bg-white dark:bg-black text-white dark:text-black">
+    <%= render partial: "layouts/navbar" %>
     <%= yield %>
+    <%= render partial: "layouts/footer" %>
   </body>
 </html>

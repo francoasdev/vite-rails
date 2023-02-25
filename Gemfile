@@ -56,3 +56,4 @@ end
 gem "redis", "~> 4.0"
 
 gem "sitepress-rails", "~> 3.2"
+
